@@ -17,11 +17,11 @@ public enum OrderStatus
 
 public class Order : Saga
 {
-    public Guid Id { get; set; }
+    public required Guid Id { get; set; }
 
-    public string ItemName { get; set; } = null!;
+    public required string ItemName { get; set; } = null!;
 
-    public OrderStatus Status { get; set; }
+    public required OrderStatus Status { get; set; }
 
     public static (Order, OrderExpired) Start(OrderCreated created)
     {

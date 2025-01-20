@@ -63,10 +63,7 @@ builder.Host.UseWolverine(opts =>
 
     // Configure messaging
     // https://wolverinefx.net/guide/handlers/#multiple-handlers-for-the-same-message-type
-    //opts.MultipleHandlerBehavior = MultipleHandlerBehavior.Separated;
-
-    opts.Policies.UseDurableInboxOnAllListeners();
-    opts.Policies.UseDurableOutboxOnAllSendingEndpoints();
+    opts.MultipleHandlerBehavior = MultipleHandlerBehavior.Separated;
 
     opts.Services.AddResourceSetupOnStartup();
 });
