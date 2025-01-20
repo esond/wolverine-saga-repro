@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D06E77AD-3817-40A2-9122-F509392E8C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Api", "src\Api\Orders.Api.csproj", "{C1D612ED-C6BA-4B8D-80A1-770BE36D2F27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2DBB1AD0-8D72-4700-A7E1-F591D18E6D7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{45BEF7C4-2562-4F26-9173-07F437EA6F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Api.IntegrationTests", "tests\Api\IntegrationTests\Orders.Api.IntegrationTests.csproj", "{A002A114-B685-4C55-9658-F8D6E6BB23E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +20,20 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1D612ED-C6BA-4B8D-80A1-770BE36D2F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D612ED-C6BA-4B8D-80A1-770BE36D2F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D612ED-C6BA-4B8D-80A1-770BE36D2F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D612ED-C6BA-4B8D-80A1-770BE36D2F27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A002A114-B685-4C55-9658-F8D6E6BB23E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A002A114-B685-4C55-9658-F8D6E6BB23E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A002A114-B685-4C55-9658-F8D6E6BB23E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A002A114-B685-4C55-9658-F8D6E6BB23E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1D612ED-C6BA-4B8D-80A1-770BE36D2F27} = {D06E77AD-3817-40A2-9122-F509392E8C71}
+		{45BEF7C4-2562-4F26-9173-07F437EA6F90} = {2DBB1AD0-8D72-4700-A7E1-F591D18E6D7F}
+		{A002A114-B685-4C55-9658-F8D6E6BB23E1} = {45BEF7C4-2562-4F26-9173-07F437EA6F90}
 	EndGlobalSection
 EndGlobal
