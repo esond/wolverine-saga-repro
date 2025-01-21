@@ -36,12 +36,6 @@ builder.Host.UseWolverine(opts =>
     {
         options.Connection(builder.Configuration.GetConnectionString("postgresdb")!);
 
-        options.UseSystemTextJsonForSerialization(EnumStorage.AsString, Casing.CamelCase,
-            jsonOptions =>
-            {
-                jsonOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-            });
-
         options.GeneratedCodeMode = TypeLoadMode.Dynamic;
 
         options.AutoCreateSchemaObjects = AutoCreate.All;
@@ -54,12 +48,6 @@ builder.Host.UseWolverine(opts =>
     opts.CodeGeneration.TypeLoadMode = TypeLoadMode.Dynamic;
 
     opts.Policies.AutoApplyTransactions();
-
-    opts.UseSystemTextJsonForSerialization(options =>
-    {
-        options.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-        options.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-    });
 
     // Configure messaging
     // https://wolverinefx.net/guide/handlers/#multiple-handlers-for-the-same-message-type
