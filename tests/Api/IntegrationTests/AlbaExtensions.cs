@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Net;
 using Alba;
 using Wolverine.Tracking;
 
@@ -38,7 +37,7 @@ public static class AlbaExtensions
             s.WriteJson(request, jsonStyle);
             s.Post.Json(request, jsonStyle).ToUrl(url);
 
-            s.StatusCodeShouldBe(HttpStatusCode.OK);
+            s.StatusCodeShouldBeSuccess();
         });
     }
 

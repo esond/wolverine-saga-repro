@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Wolverine.Http;
 using Wolverine.Http.Marten;
 
@@ -5,14 +6,16 @@ namespace Orders.Api;
 
 public class CompleteOrderEndpoint
 {
-    [WolverinePost("/orders/{id}/complete")]
-    public static (IResult, OrderCompleted?) CompleteOrder([Document(Required = true)] Order order)
+    public static Conflict<string>? Validate(Order order)
     {
-        if (order.Status == OrderStatus.Expired)
-            return (TypedResults.Conflict("Order is expired"), null);
+        return order.Status == OrderStatus.Expired ? TypedResults.Conflict("Order is expired") : null;
+    }
 
+    [WolverinePost("/orders/{id}/complete")]
+    public static (Order, OrderCompleted) CompleteOrder([Document(Required = true)] Order order)
+    {
         order.Status = OrderStatus.Completed;
 
-        return (TypedResults.Ok(order), new OrderCompleted(order.Id));
+        return (order, new OrderCompleted(order.Id));
     }
 }
