@@ -1,6 +1,6 @@
 # wolverine-saga-repro
 
-This is a reproduction of [Wolverine issue #1235].
+This is a reproduction of [Wolverine issue #1235](https://github.com/JasperFx/wolverine/issues/1235).
 
 ## Dependencies and Setup
 
